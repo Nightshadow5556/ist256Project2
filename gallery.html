@@ -68,7 +68,7 @@
                     console.log(data)
                     let p = document.createElement('p');
                     p.innerHTML = `${data.quote}`;
-                    div.appendChild(p);
+                    div.appendChild(p)
                 })
                 .catch(function (error){
                     console.log(error);
@@ -81,41 +81,45 @@
 
 
     <div class="displayContent">
-        <h1>Resume</h1>
-        <p>
-            570-951-4434 | jap6826@psu.edu <br>
-        <h4>EDUCATION</h4>
-            <h6>The Pennsylvania State University	State College, PA</h6>
-            College of Information Sciences and Technology <br>	Expected Graduation Date: May 2026 <br>
-            Intended Bachelor of Science in Cybersecurity Analytics Operations <br>	GPA: 3.56 <br>
-            Minor in Security Risk Analysis, with a focus in Law and Policy	 <br> Dean’s List 2/2 semesters <br> <br>
+        <h2>Skiing Locations Table</h2>
 
-            <h6> Central Columbia High School 	Bloomsburg, PA </h6>
-            Graduated with honors:	August 2018-August 2022 <br>
-            Two AP courses	GPA: 3.86 <br>
-            Varsity Football Captain <br> <br>
-            <h4>WORK EXPERIENCE/LEADERSHIP </h4>
+        <table id="skiTable">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Difficulty</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
 
-        <h6>Walmart	Bloomsburg, PA </h6> <br>
-            Online Grocery Pickup Associate	December 2020 – August 2022 <br>
-            •	Utilized communication skills to provide excellent customer service to Walmart customers. <br>
-            •	Diligently picked and packed online orders and delivered them to customers in a time-effective manner. <br>
-            •	Mediated disputes between the customers and team members, resulting in satisfaction for both parties. <br>
-            •	Catered to customers’ needs by answering questions or addressing concerns. <br>
-            Networking Project: State College, PA<br>
-            •	Worked in a group to design a hypothetical network for a sporting event. <br>
-            •	Conducted research on network components such as switches, routers, firewalls, etc. <br>
-            •	Organized a hypothetical budget that would meet our needs for the network. <br> <br>
-            <h4>INVOLVEMENT</h4>
-            Competitive Cyber Security Organization	State College, PA <br>
-            Member	August 2022 – September 2023<br>
-            •	Studied additional Cybersecurity topics such as networking, python, and Kali Linux.<br>
-            •	Participated in exercises such as Capture the Flag (CTF’s) and other unique cyber security challenges.<br>
-            •	Constructed a key logger in Python.<br>
+        <script>
 
-        <h4> SKILLS </h4>
-            HTML, Java, SQL, Wireshark, Linux, Windows, MS Outlook, Kali Linux, Configuring Virtual Machines, LinkedIn Learning, Networking, SQL Injections
-        </p>
+            const fetchData = async () => {
+                try {
+                    const response = await fetch('/soloProject/resources/api/ski.json');
+                    const jsonData = await response.json();
+
+                    const tableBody = document.getElementById('skiTable').getElementsByTagName('tbody')[0];
+
+                    jsonData.skiing_locations.forEach(item => {
+                        const row = tableBody.insertRow();
+                        Object.values(item).forEach(value => {
+                            const cell = row.insertCell();
+                            cell.textContent = value;
+                        });
+                    });
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                }
+            };
+
+            fetchData();
+        </script>
 
     </div>
 </div>
