@@ -1,0 +1,39 @@
+{
+  "skiing_locations": [
+    {
+      "id": 1,
+      "name": "Aspen Mountain",
+      "location": "Aspen, Colorado",
+      "difficulty": "Intermediate",
+      "description": "Renowned for its challenging slopes and breathtaking mountain views."
+    },
+    {
+      "id": 2,
+      "name": "Whistler Blackcomb",
+      "location": "Whistler, British Columbia",
+      "difficulty": "Advanced",
+      "description": "One of the largest and most popular ski resorts in North America."
+    },
+    {
+      "id": 3,
+      "name": "Zermatt",
+      "location": "Zermatt, Switzerland",
+      "difficulty": "Expert",
+      "description": "Home to the iconic Matterhorn peak, offering exhilarating runs for expert skiers."
+    },
+    {
+      "id": 4,
+      "name": "Niseko",
+      "location": "Hokkaido, Japan",
+      "difficulty": "Beginner",
+      "description": "Famous for its powder snow and excellent conditions for beginners."
+    },
+    {
+      "id": 5,
+      "name": "Chamonix-Mont-Blanc",
+      "location": "Chamonix, France",
+      "difficulty": "Expert",
+      "description": "Known for challenging off-piste skiing and stunning alpine scenery."
+    }
+  ]
+}
